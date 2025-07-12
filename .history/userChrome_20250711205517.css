@@ -752,7 +752,7 @@ See the above repository for updates as well as full license text. */
  }
 
  #urlbar:not([focused="true"])>#urlbar-background {
-     background: rgba(63, 1, 117, 0.816) !important;
+     background: rgba(63, 1, 117, 0.569) !important;
  }
 
  /*  Clean and tight extensions menu */
@@ -923,10 +923,10 @@ See the above repository for updates as well as full license text. */
      text-align: center !important;
  }
 
-
+ /*
  #urlbar:is([focused]) {
      text-align: center !important;
- }
+ }*/
 
  :root[privatebrowsingmode="temporary"] #PanelUI-menu-button {
      list-style-image: url("chrome://global/skin/icons/indicator-private-browsing.svg") !important;
