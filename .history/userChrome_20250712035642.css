@@ -1027,7 +1027,7 @@ See the above repository for updates as well as full license text. */
 
  #sidebar-box:hover,
  #sidebar-box #sidebar {
-     min-width: 400px !important;
+     min-width: 0px !important;
      max-width: 400px !important;
  }
 

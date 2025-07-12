@@ -2012,7 +2012,7 @@ toolbar:is(#TabsToolbar) #firefox-view-button {
 }
 
 toolbar:is(#TabsToolbar) #firefox-view-button .toolbarbutton-icon {
-  border-radius: 10px !important;
+  bor-radius: 10px !important;
   margin: -2px !important;
   height: calc(var(--tab-height-personal) - 6px) !important;
   width: calc(var(--tab-height-personal) - 6px) !important;

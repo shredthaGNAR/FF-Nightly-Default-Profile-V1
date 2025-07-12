@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 4,
+            "activePatchIndex": 7,
             "patches": [
                 {
                     "date": 1752292174566,
@@ -24,6 +24,18 @@
                 {
                     "date": 1752292568505,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -751,9 +751,9 @@\n      /*  max-width: 75px;*/\n  }\n \n  #urlbar:not([focused=\"true\"])>#urlbar-background {\n-     background: rgba(63, 1, 117, 0.569) !important;\n+     background: rgba(63, 1, 117, 0.816) !important;\n  }\n \n  /*  Clean and tight extensions menu */\n  #unified-extensions-panel #unified-extensions-view {\n@@ -922,12 +922,12 @@\n  #urlbar:not([focused]) .urlbar-input {\n      text-align: center !important;\n  }\n \n- /*\n+\n  #urlbar:is([focused]) {\n      text-align: center !important;\n- }*/\n+ }\n \n  :root[privatebrowsingmode=\"temporary\"] #PanelUI-menu-button {\n      list-style-image: url(\"chrome://global/skin/icons/indicator-private-browsing.svg\") !important;\n  }\n"
+                },
+                {
+                    "date": 1752317712845,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1009,12 +1009,12 @@\n  .tabbrowser-tab:hover .tab-icon-image:not([selected=true]):not([pinned]) {\n      filter: grayscale(15%) !important;\n  }\n \n- /* Gray out the favicon icon on the inactive tab *\n+ /* Gray out the favicon icon on the inactive tab */\n  .tabbrowser-tab .tab-icon-image:not([selected=true]):not([pinned]) {\n      filter: grayscale(100%) !important;\n- }*/\n+ }\n \n  #sidebar-box {\n      overflow: hidden;\n      min-width: 0px;\n@@ -1024,8 +1024,10 @@\n      transition: all 0.2s ease;\n      z-index: 2;\n  }\n \n+ /*\n+\n  #sidebar-box:hover,\n  #sidebar-box #sidebar {\n      min-width: 300px !important;\n      max-width: 300px !important;\n"
+                },
+                {
+                    "date": 1752317786304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1024,14 +1024,12 @@\n      transition: all 0.2s ease;\n      z-index: 2;\n  }\n \n- /*\n-\n  #sidebar-box:hover,\n  #sidebar-box #sidebar {\n-     min-width: 300px !important;\n-     max-width: 300px !important;\n+     min-width: 0px !important;\n+     max-width: 400px !important;\n  }\n \n \n  #sidebar-box~#sidebar-splitter {\n"
+                },
+                {
+                    "date": 1752317830171,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1026,9 +1026,9 @@\n  }\n \n  #sidebar-box:hover,\n  #sidebar-box #sidebar {\n-     min-width: 0px !important;\n+     min-width: 400px !important;\n      max-width: 400px !important;\n  }\n \n \n"
                 }
             ],
             "date": 1752292174566,
