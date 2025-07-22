@@ -1817,7 +1817,7 @@ See the above repository for updates as well as full license text. */
  }
 
  .sidebar-panel #search-box {
-     -moz-default-appearance: menupopup !important;
+     -moz-appearance: -moz-mac-source-list !important;
      background: transparent !important;
      background-color: rgba(249, 249, 250, 0.1) !important;
      color: inherit !important;

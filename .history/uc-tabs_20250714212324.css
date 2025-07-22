@@ -582,6 +582,6 @@ this theme in particular since we put the close button on the right, meaning it
 doesn't overlap with the right side of the label at all, which is where the
 overflowing mask is applied. so we make the mask size constant. */
 .tabbrowser-tab {
-  --tab-label-mask-size: 2em !important;
+  --tab-label-mask-size: 1em !important;
   --tab-min-width: inherit !important;
 }

@@ -1446,7 +1446,7 @@ See the above repository for updates as well as full license text. */
 }
 
 .sidebar-panel #search-box {
-  -moz-default-appearance: menupopup !important;
+  -moz-appearance: -moz-mac-source-list !important;
   background-color: rgba(28, 2, 36, 0.422) !important;
   color: inherit !important;
 }
@@ -2418,8 +2418,17 @@ See the above repository for updates as well as full license text. */
   text-align: center !important;
 }
 
+/* These exist for compatibility with combined_favicon_and_tab_close_button.css */
+.tab-icon-overlay {
+  pointer-events: auto
+}
 
-/* centered tab label *
+.tab-content>.tab-icon-stack,
+.tab-icon-stack:hover>.tab-icon-image {
+  visibility: visible
+}
+
+/* centered tab label */
 
 .tab-label-container {
   display: grid;
@@ -2439,6 +2448,20 @@ See the above repository for updates as well as full license text. */
   margin-inline-end: 6px;
 }
 
+/* Show tab close button when cursor is over the tab icon */
+
+.tab-content {
+  pointer-events: none
+}
+
+.tab-icon-image:not([busy]) {
+  display: block !important;
+}
+
+:where(.tab-content:hover) .tab-icon-image,
+:where(.tab-content:hover)>.tab-icon-stack {
+  visibility: hidden;
+}
 
 .tab-close-button {
   order: -1;
@@ -2459,7 +2482,7 @@ See the above repository for updates as well as full license text. */
   display: none !important;
 }
 
-/* Always show tab close button on hover and never otherwise *
+/* Always show tab close button on hover and never otherwise */
 
 .tabbrowser-tab .tab-close-button {
   display: none;
@@ -2499,7 +2522,7 @@ See the above repository for updates as well as full license text. */
 }
 
 :root:-moz-window-inactive .tab-content {
-  opacity: 0.6 !important;
+  opacity: 0.6;
 }
 
 :root {
@@ -2519,102 +2542,12 @@ See the above repository for updates as well as full license text. */
   box-shadow: 0 0 0 var(--tabs-navbar-shadow-size) rgba(0, 0, 0, .05) !important;
 }
 
-:root #tabbrowser-tabs:not([noshadowfortests]) .tab-background:is([selected], [multiselected]) {
-  box-shadow: 0 0 0 var(--tabs-navbar-shadow-size) hsla(280, 6%, 60%, 0.5) inset, 0 0 0 var(--tabs-navbar-shadow-size) rgba(0, 0, 0, .6), 0 1px 5px rgba(0, 0, 0, .1) !important;
-}
+@media (-moz-content-prefers-color-scheme: dark) {
+  :root #tabbrowser-tabs:not([noshadowfortests]) .tab-background:is([selected], [multiselected]) {
+    box-shadow: 0 0 0 var(--tabs-navbar-shadow-size) hsla(280, 6%, 60%, 0.5) inset, 0 0 0 var(--tabs-navbar-shadow-size) rgba(0, 0, 0, .6), 0 1px 5px rgba(0, 0, 0, .1) !important;
+  }
 
-:root:-moz-window-inactive #tabbrowser-tabs:not([noshadowfortests]) .tab-background:is([selected], [multiselected]) {
-  box-shadow: 0 0 0 var(--tabs-navbar-shadow-size) rgba(0, 0, 0, .4) !important;
-}
-
-/* Show Favicon Bookmarks */
-.bookmark-item>.toolbarbutton-icon {
-  display: -moz-box ! important;
-  background-position: 0px 1px !important;
-  padding-right: 0px ! important;
-  margin: 0 !important;
-}
-
-/* Center bookmarks bar */
-
-#PlacesToolbarItems {
-  display: flex !important;
-  justify-content: center !important;
-}
-
-/* Compact extensions menu */
-
-#unified-extensions-view {
-  width: unset !important;
-}
-
-#overflowed-extensions-list,
-#unified-extensions-area,
-.unified-extensions-list {
-  margin-inline: 6px !important;
-  display: flex !important;
-}
-
-
-#unified-extensions-view .panel-header,
-#unified-extensions-view toolbarseparator {
-  display: none !important;
-}
-
-#unified-extensions-panel #unified-extensions-view {
-  margin-top: 4px !important;
-}
-
-#unified-extensions-manage-extensions {
-  margin-top: 8px !important;
-}
-
-#unified-extensions-panel vbox#overflowed-extensions-list:not(:empty),
-#unified-extensions-panel vbox#unified-extensions-area:not(:empty),
-#unified-extensions-panel vbox.unified-extensions-list:not(:empty) {
-  border-bottom: 1px solid color-mix(in srgb, currentColor 40%, transparent);
-}
-
-
-#overflowed-extensions-list .toolbarbutton-icon,
-#unified-extensions-panel .toolbarbutton-icon,
-.unified-extensions-item-icon {
-  --uei-icon-size: 16px;
-}
-
-.toolbaritem-combined-buttons {
-  margin: 0 !important;
-  margin-right: 3px !important;
-}
-
-#unified-extensions-view>vbox>vbox>.unified-extensions-item {
-  padding-block: 0px !important;
-  margin-block: 0px !important;
-}
-
-#unified-extensions-view .subviewbutton-iconic[data-l10n-id="unified-extensions-item-open-menu"] .toolbarbutton-icon {
-  padding: 3px !important;
-}
-
-.unified-extensions-item-contents {
-  line-height: 1 !important;
-  white-space: nowrap !important;
-}
-
-.unified-extensions-item-name {
-  font-size: 90% !important;
-}
-
-.unified-extensions-item-message {
-  font-size: 0 !important;
-}
-
-#unified-extensions-view .unified-extensions-item-menu-button.subviewbutton:not(:hover) {
-  opacity: 0.2 !important;
-}
-
-#unified-extensions-panel :where(toolbaritem, unified-extensions-item)[attention] .unified-extensions-item-action-button {
-  box-shadow:
-    1px 1px var(--uei-button-attention-dot-color) inset,
-    -1px -1px var(--uei-button-attention-dot-color) inset !important;
+  :root:-moz-window-inactive #tabbrowser-tabs:not([noshadowfortests]) .tab-background:is([selected], [multiselected]) {
+    box-shadow: 0 0 0 var(--tabs-navbar-shadow-size) rgba(0, 0, 0, .4) !important;
+  }
 }

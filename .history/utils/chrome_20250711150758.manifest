@@ -9,7 +9,6 @@ content userscripts ../JS/
 skin userstyles classic/1.0 ../CSS/
 # Where icons and content stylesheets and other stuff exist.
 content userchrome ../resources/
-resource userchromejs ../
 
 # Override the built-in styles for arrowscrollboxes, mainly to replace scrollbuttons with scrollbars.
 #override chrome://global/skin/arrowscrollbox.css ../resources/layout/arrowscrollbox.css

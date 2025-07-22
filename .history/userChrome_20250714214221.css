@@ -841,19 +841,19 @@ See the above repository for updates as well as full license text. */
 
  }
 
- /* Change inactive tab favicon color *
+ /* Change inactive tab favicon color */
  .tabbrowser-tab[pinned][fadein]:not([selected="true"]) .tab-icon-image {
      filter: grayscale(70%) opacity(80%) contrast(200%) !important;
- }*/
+ }
 
  #nav-bar {
      border-top: none !important;
      box-shadow: 0 calc(-1 * var(--tabs-navbar-shadow-size)) 0 var(--tabs-navbar-separator-color, transparent) !important;
  }
 
- /* Target the favicon image within a selected tab*\
+ /* Target the favicon image within a selected tab*/
  #tabbrowser-tabs .tab-icon-image[selected="true"] {
-     /* Apply your desired styles here *
+     /* Apply your desired styles here */
      filter: grayscale(0%) !important;
      filter: drop-shadow(1px 0 0 white), drop-shadow(-1px 0 0 white), drop-shadow(0 1px 0 white), drop-shadow(0 -1px 0 white) !important;
      border-radius: 15% !important;
@@ -888,24 +888,24 @@ See the above repository for updates as well as full license text. */
      max-width: 300px;
  }
 
- /* Makes black favicons more visible on dark background, contrast will be lowered though *
+ /* Makes black favicons more visible on dark background, contrast will be lowered though */
  .tab-icon-image {
      filter: invert(40%) contrast(250%) saturate(250%) !important;
  }
 
- /* Blend Inactive tabs favicon */
+ /* Blend Inactive tabs favicon *
  :is(#TabsToolbar, #vertical-tabs) #tabbrowser-tabs .tabbrowser-tab[pending] .tab-content:not(:hover) .tab-icon-image {
      filter: grayscale(0%) !important;
      transition: filter 0.2s ease-in;
      opacity: 1 !important;
  }
 
- /* Blend Inactive tabs favicon */
+ /* Blend Inactive tabs favicon *
  #TabsToolbar #tabbrowser-tabs .tabbrowser-tab[pending] .tab-content:not(:hover) .tab-icon-image {
      filter: grayscale(0%) !important;
      transition: filter 0.2s ease-in;
      opacity: 1 !important;
- }
+ }*/
 
  .tabbrowser-tab:not([selected="true"]) .tab-icon-image {
      opacity: 0.7 !important;
@@ -1010,10 +1010,10 @@ See the above repository for updates as well as full license text. */
      filter: grayscale(15%) !important;
  }
 
- /* Gray out the favicon icon on the inactive tab *
+ /* Gray out the favicon icon on the inactive tab */
  .tabbrowser-tab .tab-icon-image:not([selected=true]):not([pinned]) {
      filter: grayscale(100%) !important;
- }*/
+ }
 
  #sidebar-box {
      overflow: hidden;
@@ -1817,7 +1817,7 @@ See the above repository for updates as well as full license text. */
  }
 
  .sidebar-panel #search-box {
-     -moz-default-appearance: menupopup !important;
+     -moz-appearance: -moz-mac-source-list !important;
      background: transparent !important;
      background-color: rgba(249, 249, 250, 0.1) !important;
      color: inherit !important;

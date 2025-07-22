@@ -2418,8 +2418,17 @@ See the above repository for updates as well as full license text. */
   text-align: center !important;
 }
 
+/* These exist for compatibility with combined_favicon_and_tab_close_button.css */
+.tab-icon-overlay {
+  pointer-events: auto
+}
 
-/* centered tab label *
+.tab-content>.tab-icon-stack,
+.tab-icon-stack:hover>.tab-icon-image {
+  visibility: visible
+}
+
+/* centered tab label */
 
 .tab-label-container {
   display: grid;
@@ -2439,6 +2448,20 @@ See the above repository for updates as well as full license text. */
   margin-inline-end: 6px;
 }
 
+/* Show tab close button when cursor is over the tab icon */
+
+.tab-content {
+  pointer-events: none
+}
+
+.tab-icon-image:not([busy]) {
+  display: block !important;
+}
+
+:where(.tab-content:hover) .tab-icon-image,
+:where(.tab-content:hover)>.tab-icon-stack {
+  visibility: hidden;
+}
 
 .tab-close-button {
   order: -1;
@@ -2459,7 +2482,7 @@ See the above repository for updates as well as full license text. */
   display: none !important;
 }
 
-/* Always show tab close button on hover and never otherwise *
+/* Always show tab close button on hover and never otherwise */
 
 .tabbrowser-tab .tab-close-button {
   display: none;
@@ -2499,7 +2522,7 @@ See the above repository for updates as well as full license text. */
 }
 
 :root:-moz-window-inactive .tab-content {
-  opacity: 0.6 !important;
+  opacity: 0.6;
 }
 
 :root {
@@ -2527,6 +2550,20 @@ See the above repository for updates as well as full license text. */
   box-shadow: 0 0 0 var(--tabs-navbar-shadow-size) rgba(0, 0, 0, .4) !important;
 }
 
+
+/* compact bookmarks */
+
+/* Hide label text & bookmark folder drop marker */
+.toolbarbutton-menu-dropmarker,
+#personal-bookmarks toolbarbutton[image] label {
+  display: none !important;
+}
+
+/* No Favicon Available - Don't display default icon */
+toolbarbutton.bookmark-item:not([container]):not([image]) image {
+  display: none !important;
+}
+
 /* Show Favicon Bookmarks */
 .bookmark-item>.toolbarbutton-icon {
   display: -moz-box ! important;
@@ -2534,6 +2571,13 @@ See the above repository for updates as well as full license text. */
   padding-right: 0px ! important;
   margin: 0 !important;
 }
+
+/* Hide folder icon for folders */
+.bookmark-item[container]>.toolbarbutton-icon {
+  margin-right: 5px !important;
+  display: none !important;
+}
+
 
 /* Center bookmarks bar */
 
@@ -2618,3 +2662,148 @@ See the above repository for updates as well as full license text. */
     1px 1px var(--uei-button-attention-dot-color) inset,
     -1px -1px var(--uei-button-attention-dot-color) inset !important;
 }
+
+
+/* Window padding (only in windowed mode) */
+
+#navigator-toolbox,
+#navigator-toolbox {
+  &:-moz-window-inactive {
+    background-color: transparent !important;
+
+  }
+}
+
+.browserContainer {
+  border: solid 5px transparent !important;
+  border-top-width: 0px !important;
+}
+
+.browserStack>* {
+  border: none !important;
+  border-radius: 10px !important;
+}
+
+#tabbrowser-tabpanels[flex],
+#appcontent[flex] {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+#tabbrowser-tabbox[flex],
+#tabbrowser-tabpanels,
+browser[type="content-primary"],
+browser[type="content"]>html {
+  background: transparent !important;
+  background-color: transparent !important;
+  clip-path: inset(0px 0px 0px round 10px 0) !important;
+}
+
+
+/*
+:root:has(#navigator-toolbox:not([inFullscreen="true"])) {
+
+:root[BookmarksToolbarOverlapsBrowser] .newTabBrowserPanel,
+:root[BookmarksToolbarOverlapsBrowser] #sidebar-box {
+  padding-top: 0 !important;
+}
+
+:root[BookmarksToolbarOverlapsBrowser] #browser {
+  margin-top: var(--bookmarks-toolbar-overlapping-browser-height);
+}
+
+:root[BookmarksToolbarOverlapsBrowser] #navigator-toolbox:not([style*="z-index"]) {
+  z-index: auto !important;
+}
+
+:root:not([BookmarksToolbarOverlapsBrowser]) #browser {
+  z-index: 1 !important;
+}
+
+#appcontent {
+  margin-top: 1px !important;
+  margin-inline: 4px !important;
+  margin-block-end: 4px !important;
+  border-radius: 9px !important;
+  overflow: hidden !important;
+}
+
+#sidebar-box {
+  margin-top: 1px !important;
+  margin-inline-start: 4px !important;
+  margin-block-end: 4px !important;
+  border-radius: 9px !important;
+  overflow: hidden !important;
+  box-shadow: 0 0 0 1px light-dark(rgb(204, 204, 204), hsl(240, 5%, 5%)) !important;
+
+  :root[BookmarksToolbarOverlapsBrowser] .newTabBrowserPanel,
+  :root[BookmarksToolbarOverlapsBrowser] #sidebar-box {
+    padding-top: 0 !important;
+  }
+
+  :root[BookmarksToolbarOverlapsBrowser] #browser {
+    margin-top: var(--bookmarks-toolbar-overlapping-browser-height);
+  }
+
+  :root[BookmarksToolbarOverlapsBrowser] #navigator-toolbox:not([style*="z-index"]) {
+    z-index: auto !important;
+  }
+
+  :root:not([BookmarksToolbarOverlapsBrowser]) #browser {
+    z-index: 1 !important;
+  }
+
+
+  #appcontent {
+    margin-top: 1px !important;
+    margin-inline: 4px !important;
+    margin-block-end: 4px !important;
+    border-radius: 9px !important;
+    overflow: hidden !important;
+  }
+
+  #sidebar-box {
+    margin-top: 1px !important;
+    margin-inline-start: 4px !important;
+    margin-block-end: 4px !important;
+    border-radius: 9px !important;
+    overflow: hidden !important;
+    box-shadow: 0 0 0 1px light-dark(rgb(204, 204, 204), hsl(240, 5%, 5%)) !important;
+
+    &[positionend] {
+      margin-inline-start: 0 !important;
+      margin-inline-end: 8px !important;
+    }
+  }
+
+  :not(:root[inFullscreen] #navigator-toolbox[style*="margin-top"])+#browser #sidebar-splitter {
+    border-inline-width: 0 !important;
+  }
+
+  #browser {
+    background-color: var(--toolbar-bgcolor);
+  }
+
+  #navigator-toolbox {
+    border-bottom: none !important;
+  }
+
+  &[positionend] {
+    margin-inline-start: 0 !important;
+    margin-inline-end: 8px !important;
+  }
+}
+
+:not(:root[inFullscreen] #navigator-toolbox[style*="margin-top"])+#browser #sidebar-splitter {
+  border-inline-width: 0 !important;
+}
+
+#browser {
+  background-color: var(--toolbar-bgcolor);
+}
+
+#navigator-toolbox {
+  border-bottom: none !important;
+}
+
+} */

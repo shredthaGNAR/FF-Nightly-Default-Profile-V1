@@ -2419,7 +2419,7 @@ See the above repository for updates as well as full license text. */
 }
 
 
-/* centered tab label *
+/* centered tab label */
 
 .tab-label-container {
   display: grid;
@@ -2459,7 +2459,7 @@ See the above repository for updates as well as full license text. */
   display: none !important;
 }
 
-/* Always show tab close button on hover and never otherwise *
+/* Always show tab close button on hover and never otherwise */
 
 .tabbrowser-tab .tab-close-button {
   display: none;

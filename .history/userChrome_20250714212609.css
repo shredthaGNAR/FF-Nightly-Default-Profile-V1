@@ -841,10 +841,10 @@ See the above repository for updates as well as full license text. */
 
  }
 
- /* Change inactive tab favicon color *
+ /* Change inactive tab favicon color */
  .tabbrowser-tab[pinned][fadein]:not([selected="true"]) .tab-icon-image {
      filter: grayscale(70%) opacity(80%) contrast(200%) !important;
- }*/
+ }
 
  #nav-bar {
      border-top: none !important;
@@ -888,7 +888,7 @@ See the above repository for updates as well as full license text. */
      max-width: 300px;
  }
 
- /* Makes black favicons more visible on dark background, contrast will be lowered though *
+ /* Makes black favicons more visible on dark background, contrast will be lowered though */
  .tab-icon-image {
      filter: invert(40%) contrast(250%) saturate(250%) !important;
  }
@@ -1010,10 +1010,10 @@ See the above repository for updates as well as full license text. */
      filter: grayscale(15%) !important;
  }
 
- /* Gray out the favicon icon on the inactive tab *
+ /* Gray out the favicon icon on the inactive tab */
  .tabbrowser-tab .tab-icon-image:not([selected=true]):not([pinned]) {
      filter: grayscale(100%) !important;
- }*/
+ }
 
  #sidebar-box {
      overflow: hidden;
@@ -1722,7 +1722,7 @@ See the above repository for updates as well as full license text. */
  }
 
  /* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/centered_tab_label.css made available under Mozilla Public License v. 2.0
-See the above repository for updates as well as full license text. */
+See the above repository for updates as well as full license text. *
 
  .tab-label-container {
      display: grid;
@@ -1817,7 +1817,7 @@ See the above repository for updates as well as full license text. */
  }
 
  .sidebar-panel #search-box {
-     -moz-default-appearance: menupopup !important;
+     -moz-appearance: -moz-mac-source-list !important;
      background: transparent !important;
      background-color: rgba(249, 249, 250, 0.1) !important;
      color: inherit !important;
