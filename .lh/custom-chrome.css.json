@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 25,
+            "activePatchIndex": 26,
             "patches": [
                 {
                     "date": 1752317712836,
@@ -108,6 +108,10 @@
                 {
                     "date": 1752625873718,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2458,9 +2458,9 @@\n .tabbrowser-tab[pinned] .tab-close-button {\n   display: none !important;\n }\n \n-/* Always show tab close button on hover and never otherwise */\n+/* Always show tab close button on hover and never otherwise *\n \n .tabbrowser-tab .tab-close-button {\n   display: none;\n }\n"
+                },
+                {
+                    "date": 1753616194794,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2616,5 +2616,22 @@\n #unified-extensions-panel :where(toolbaritem, unified-extensions-item)[attention] .unified-extensions-item-action-button {\n   box-shadow:\n     1px 1px var(--uei-button-attention-dot-color) inset,\n     -1px -1px var(--uei-button-attention-dot-color) inset !important;\n+}\n+\n+#urlbar .urlbar-input-container[contextid] {\n+  background-color: color-mix(in srgb, transparent 75%, var(--identity-tab-color)) !important;\n+}\n+\n+#urlbar[open] .urlbar-input-container[contextid] {\n+  border-bottom-left-radius: 0 !important;\n+  border-bottom-right-radius: 0 !important;\n+}\n+\n+#urlbar[open]>.urlbar-input-container[contextid]~.urlbarView>.urlbarView-body-outer>.urlbarView-body-inner {\n+  border-color: transparent !important;\n+}\n+\n+panel[type=\"autocomplete-richlistbox\"][anchored-on-panel] {\n+  --panel-background: var(--autocomplete-background);\n }\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1752317712836,

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 15,
+            "activePatchIndex": 16,
             "patches": [
                 {
                     "date": 1752292174566,
@@ -68,6 +68,10 @@
                 {
                     "date": 1752625261679,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1816,9 +1816,9 @@\n      color: var(--newtab-text-primary-color) !important;\n  }\n \n  .sidebar-panel #search-box {\n-     -moz-appearance: -moz-mac-source-list !important;\n+     -moz-default-appearance: menupopup !important;\n      background: transparent !important;\n      background-color: rgba(249, 249, 250, 0.1) !important;\n      color: inherit !important;\n  }\n"
+                },
+                {
+                    "date": 1753327038693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,12 +42,12 @@\n  .tabbrowser-tab:not([selected=\"true\"]) .tab-icon-image {\n      opacity: 0.6 !important;\n  }\n \n- /* Add all around shadow-looks like an Outline */\n+ /* Add all around shadow-looks like an Outline *\n  .tabbrowser-tab[selected] .tab-icon-image {\n      filter: drop-shadow(1px 0 0 #d1a141bb) drop-shadow(-1px 0 0 #d1a141bb) drop-shadow(0 1px 0 #d1a141bb) drop-shadow(0 -1px 0 #d1a141bb) !important;\n-     /*   border-radius: 15% !important;*/\n+     /*   border-radius: 15% !important;*\n  }\n \n  /* Sidebar background color change */\n  /* Bookmarks bar background color */\n@@ -1280,9 +1280,9 @@\n      padding-block: var(--space-small) !important;\n  }\n \n  /* Adds an effect to the highlight that wasn't there in Photon */\n- /* Remove if unwanted */\n+ /* Remove if unwanted *\n  .tabbrowser-tab:hover>.tab-stack>.tab-background[selected]::before {\n      filter: brightness(125%) saturate(150%) !important;\n  }\n \n"
                 }
             ],
             "date": 1752292174566,
