@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name           Search Selection Keyboard Shortcut
-// @version        1.8.1
+// @version        1.8.2
 // @author         aminomancer
 // @homepageURL    https://github.com/aminomancer
 // @long-description
@@ -378,11 +378,12 @@ export class SearchSelectionShortcutParent extends JSWindowActorParent {
           win.gBrowser.selectedBrowser.getAttribute("userContextId"),
       });
 
+    let inBackground = Services.prefs.getBoolPref(
+      "browser.search.context.loadInBackground",
+      true
+    );
     let options = {
-      inBackground: Services.prefs.getBoolPref(
-        "browser.search.context.loadInBackground",
-        true
-      ),
+      inBackground,
       triggeringPrincipal: principal,
       relatedToCurrent: true,
       allowThirdPartyFixup: true,
@@ -461,16 +462,16 @@ export class SearchSelectionShortcutParent extends JSWindowActorParent {
       locationURL,
       locationHost
     );
-    lazy.SearchUIUtils._loadSearch(
-      win,
-      text,
+    lazy.SearchUIUtils._loadSearch({
+      window: win,
+      searchText: text,
       where,
-      lazy.PrivateBrowsingUtils.isWindowPrivate(win),
-      principal,
-      csp,
-      options.inBackground,
-      engine
-    );
+      usePrivate: lazy.PrivateBrowsingUtils.isWindowPrivate(win),
+      triggeringPrincipal: principal,
+      policyContainer: csp,
+      inBackground,
+      engine,
+    });
   }
 
   async receiveMessage(msg) {
@@ -552,4 +553,31 @@ if (Services.appinfo.processType === Services.appinfo.PROCESS_TYPE_DEFAULT) {
     allFrames: true,
     messageManagerGroups: ["browsers", "webext-browsers", "sidebars"],
   });
+
+  // Might need to get rid of the F-key shortcuts on macOS.
+  const { AppConstants } = ChromeUtils.importESModule(
+    "resource://gre/modules/AppConstants.sys.mjs"
+  );
+  if (AppConstants.platform === "macosx") {
+    const { EveryWindow } = ChromeUtils.importESModule(
+      "resource:///modules/EveryWindow.sys.mjs"
+    );
+    EveryWindow.registerCallback(
+      "RemoveSearchFocusShortcutAlt",
+      win => {
+        // We can just remove it, since this key is an alt for Accel+K. On
+        // Windows it is mapped to a different key.
+        win.document
+          .querySelector(`key#key_search2[data-l10n-id="find-shortcut"]`)
+          ?.remove();
+        // There are also alts for the fullscreen keys that need to be removed.
+        for (let key of win.document.querySelectorAll(
+          `key[data-l10n-id="full-screen-shortcut"][modifiers="accel,shift"]`
+        )) {
+          key.remove();
+        }
+      },
+      () => {}
+    );
+  }
 }
