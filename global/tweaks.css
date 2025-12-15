@@ -1,34 +1,24 @@
 /* Edge-Frfox - tweaks.css */
 
-/*
-  MARK: Disable drag space
-*/
+/* disable drag space above tabs */
 @media (-moz-bool-pref: "uc.tweak.disable-drag-space") {
-
-  /* disable drag space above tabs */
   :root {
     --uc-tab-top-margin: 0px !important;
   }
 }
 
-/*
-  MARK: Force tab colour
-*/
 /* force tabs to toolbar bg (useful for proton themes) (might experience some
 bugs with certain themes eg. dark text on dark background.) */
 @media (-moz-bool-pref: "uc.tweak.force-tab-colour") {
-  :root[lwtheme] {
+  :root:-moz-lwtheme {
     --tab-selected-bgcolor: var(--toolbar-bgcolor) !important;
     --tab-selected-textcolor: var(--toolbar-color) !important;
   }
 }
 
-/*
-  MARK: Remove tab separators
-*/
+/* remove tab separators */
 @media (-moz-bool-pref: "uc.tweak.remove-tab-separators") {
   .tabbrowser-tab .tab-stack {
-
     &::before,
     &::after {
       content: initial !important;
@@ -36,12 +26,8 @@ bugs with certain themes eg. dark text on dark background.) */
   }
 }
 
-/*
-  MARK: Floating tabs
-*/
 @media (-moz-bool-pref: "uc.tweak.floating-tabs") {
-
-  :root:not([lwtheme]),
+  :root:not(:-moz-lwtheme),
   /* `--newtab-background-color-secondary used` to differentiate between a dark
    * private window and private window with the 'Dark' theme enabled.
    * May not be the most reliable method, but works for now up to FF 123. */
@@ -63,12 +49,12 @@ bugs with certain themes eg. dark text on dark background.) */
 
     &:-moz-window-inactive {
       --toolbar-color: var(--lwt-text-color-inactive, var(--lwt-text-color)) !important;
-      --toolbarbutton-icon-fill: var(--lwt-text-color-inactive, var(--lwt-text-color)) !important;
+      --toolbarbutton-icon-fill:  var(--lwt-text-color-inactive, var(--lwt-text-color)) !important;
     }
   }
 
   @media (-moz-gtk-csd-available) {
-    :root:not([lwtheme]) {
+    :root:not(:-moz-lwtheme) {
       --toolbar-bgcolor: color-mix(in srgb, -moz-dialog 80%, #fff) !important;
       --toolbar-field-background-color: Field !important;
       --lwt-tab-text: -moz-dialogtext !important;
@@ -156,9 +142,8 @@ bugs with certain themes eg. dark text on dark background.) */
 
   #scrollbutton-up:not(.menupopup-scrollbutton),
   #scrollbutton-down:not(.menupopup-scrollbutton) {
-
     &,
-    &~spacer {
+    & ~ spacer {
       margin-top: 4px !important;
     }
   }
@@ -174,9 +159,9 @@ bugs with certain themes eg. dark text on dark background.) */
     overflow-clip-margin: 8px !important;
   }
 
-  #tabbrowser-arrowscrollbox>*,
+  #tabbrowser-arrowscrollbox > *,
   #scrollbutton-up:not(.menupopup-scrollbutton),
-  #scrollbutton-up:not(.menupopup-scrollbutton)~spacer,
+  #scrollbutton-up:not(.menupopup-scrollbutton) ~ spacer,
   #scrollbutton-down:not(.menupopup-scrollbutton) {
     margin-bottom: 8px !important;
   }
@@ -186,9 +171,6 @@ bugs with certain themes eg. dark text on dark background.) */
   }
 }
 
-/*
-  MARK: Vertical context nav
-*/
 @media (not (-moz-platform: macos)) and (not (-moz-bool-pref: "uc.tweak.revert-context-menu")) {
   @media (-moz-bool-pref: "uc.tweak.vertical-context-navigation") {
     #context-navigation {
@@ -196,7 +178,7 @@ bugs with certain themes eg. dark text on dark background.) */
       flex-direction: column !important;
 
       /* Align the image and label to the left edge. */
-      &>.menuitem-iconic {
+      & > .menuitem-iconic {
         justify-content: start !important;
 
         &::after {
@@ -208,11 +190,8 @@ bugs with certain themes eg. dark text on dark background.) */
   }
 }
 
-/*
-  MARK: Hide access key
-*/
 @media (-moz-bool-pref: "uc.tweak.context-menu.hide-access-key") {
-  :where(menuitem, menu)> :is(.menu-text, .menu-iconic-text)[value]:not([value=""]) {
+  :where(menuitem, menu) > :is(.menu-text, .menu-iconic-text)[value]:not([value=""]) {
     &::before {
       /* The default value is -moz-label-content, which takes the data from the
        * value attribute and highlights the character found in the accesskey
@@ -222,29 +201,19 @@ bugs with certain themes eg. dark text on dark background.) */
   }
 }
 
-/*
-  MARK: Show tab close button
-*/
 @media (-moz-bool-pref: "uc.tweak.show-tab-close-button-on-hover") {
   #tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([pinned], [selected]):hover .tab-close-button {
     display: flex !important;
   }
 }
 
-/*
-  MARK: Hide forward button
-*/
 @media (-moz-bool-pref: "uc.tweak.hide-forward-button") {
   :root:not([customizing]) #forward-button[disabled] {
     display: none !important;
   }
 }
 
-/*
-  MARK: Hide Firefox account
-*/
 @media (-moz-bool-pref: "uc.tweak.context-menu.hide-firefox-account") {
-
   #appMenu-fxa-status2,
   #appMenu-fxa-separator {
     display: none !important;

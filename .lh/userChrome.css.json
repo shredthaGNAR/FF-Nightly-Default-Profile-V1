@@ -3,7 +3,11 @@
     "activeCommit": 0,
     "commits": [
         {
+<<<<<<< Updated upstream
             "activePatchIndex": 38,
+=======
+            "activePatchIndex": 16,
+>>>>>>> Stashed changes
             "patches": [
                 {
                     "date": 1752292174566,
@@ -72,6 +76,7 @@
                 {
                     "date": 1753327038693,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,12 +42,12 @@\n  .tabbrowser-tab:not([selected=\"true\"]) .tab-icon-image {\n      opacity: 0.6 !important;\n  }\n \n- /* Add all around shadow-looks like an Outline */\n+ /* Add all around shadow-looks like an Outline *\n  .tabbrowser-tab[selected] .tab-icon-image {\n      filter: drop-shadow(1px 0 0 #d1a141bb) drop-shadow(-1px 0 0 #d1a141bb) drop-shadow(0 1px 0 #d1a141bb) drop-shadow(0 -1px 0 #d1a141bb) !important;\n-     /*   border-radius: 15% !important;*/\n+     /*   border-radius: 15% !important;*\n  }\n \n  /* Sidebar background color change */\n  /* Bookmarks bar background color */\n@@ -1280,9 +1280,9 @@\n      padding-block: var(--space-small) !important;\n  }\n \n  /* Adds an effect to the highlight that wasn't there in Photon */\n- /* Remove if unwanted */\n+ /* Remove if unwanted *\n  .tabbrowser-tab:hover>.tab-stack>.tab-background[selected]::before {\n      filter: brightness(125%) saturate(150%) !important;\n  }\n \n"
+<<<<<<< Updated upstream
                 },
                 {
                     "date": 1754222768640,
@@ -160,6 +165,8 @@
                 {
                     "date": 1754440077857,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1197,15 +1197,15 @@\n  .tab-content {\n      padding-top: 1px !important;\n      margin-left: -1px !important;\n  }*/\n- /* 1/16/2022 Tone down the Fx96 tab border with add-on themes in certain fallback situations */\n+ /* 1/16/2022 Tone down the Fx96 tab border with add-on themes in certain fallback situations *\n  .tab-background:is([selected], [multiselected]):-moz-lwtheme {\n      background-image: radial-gradient(circle at bottom center,\n              #6600ff 5px,\n              #0e001b85) !important;\n  }\n-\n+/**\n  [brighttext=\"true\"] .tab-background:is([selected], [multiselected]):-moz-lwtheme {\n      --lwt-tabs-border-color: rgba(60, 37, 153, 0.914) !important;\n  }\n \n"
+=======
+>>>>>>> Stashed changes
                 }
             ],
             "date": 1752292174566,

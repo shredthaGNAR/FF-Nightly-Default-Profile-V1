@@ -1,4 +1,4 @@
-@layer LowPriority, HighPriority; 
+@layer LowPriority, HighPriority;
 
 @import "special/windows.css" layer(HighPriority) /* supports() */ (-moz-platform: windows);
 @import "special/linux.css"   layer(HighPriority) /* supports() */ (-moz-platform: linux);
@@ -58,7 +58,7 @@
         --left-svg:   url("special/tabs/option_1/left_corners.svg");
         --center-svg: url("special/tabs/option_1/center.svg");
         --right-svg:  url("special/tabs/option_1/right_corners.svg");
-        
+
         --tab-first-last-inline-margin: calc(var(--tab-min-height) / 4);
     }
 
@@ -67,7 +67,7 @@
         --left-svg:   url("special/tabs/option_6/left_corners.svg");
         --center-svg: url("special/tabs/option_6/center.svg");
         --right-svg:  url("special/tabs/option_6/right_corners.svg");
-        
+
         --tab-first-last-inline-margin: calc(var(--tab-min-height) / 4);
         --outer-drop-border-offset: 1px;
     }
@@ -77,7 +77,7 @@
         --left-svg:   url("special/tabs/option_7/left_corners.svg");
         --center-svg: url("special/tabs/option_7/center.svg");
         --right-svg:  url("special/tabs/option_7/right_corners.svg");
-        
+
         --tab-first-last-inline-margin: calc(var(--tab-min-height) / 4);
         --outer-drop-border-offset: 1px;
     }
@@ -87,7 +87,7 @@
         --left-svg:   url("special/tabs/option_8/left_corners.svg");
         --center-svg: url("special/tabs/option_8/center.svg");
         --right-svg:  url("special/tabs/option_8/right_corners.svg");
-        
+
         --tab-first-last-inline-margin: calc(var(--tab-min-height) / 2 - 6px);
         --outer-drop-border-offset: 1px;
     }
@@ -97,7 +97,7 @@
         --left-svg:   url("special/tabs/option_9/left_corners.svg");
         --center-svg: url("special/tabs/option_9/center.svg");
         --right-svg:  url("special/tabs/option_9/right_corners.svg");
-        
+
         --tab-first-last-inline-margin: calc(var(--tab-min-height) / 2);
         --outer-drop-border-offset: 1px;
     }
@@ -107,7 +107,7 @@
         --left-svg:   url("special/tabs/option_10/left_corners.svg");
         --center-svg: url("special/tabs/option_10/center.svg");
         --right-svg:  url("special/tabs/option_10/right_corners.svg");
-        
+
         --tab-first-last-inline-margin: calc(var(--tab-min-height) / 2);
         --outer-drop-border-offset: 1px;
     }
@@ -117,7 +117,7 @@
         --left-svg:   url("special/tabs/option_11/left_corners.svg");
         --center-svg: url("special/tabs/option_11/center.svg");
         --right-svg:  url("special/tabs/option_11/right_corners.svg");
-        
+
         --tab-first-last-inline-margin: calc(var(--tab-min-height) / 2);
         --outer-drop-border-offset: 1px;
     }
@@ -127,7 +127,7 @@
         --left-svg:   url("special/tabs/option_12/left_corners.svg");
         --center-svg: url("special/tabs/option_12/center.svg");
         --right-svg:  url("special/tabs/option_12/right_corners.svg");
-        
+
         --tab-first-last-inline-margin: calc(var(--tab-min-height) / 2);
         --outer-drop-border-offset: 1px;
     }
@@ -506,7 +506,7 @@
 
 
 
-       
+
 
 /* ---------------------------------------- System Theme ---------------------------------------- */
 
@@ -1183,7 +1183,7 @@ spacer[part="overflow-end-indicator"]
 }
 
 /* ---------------------------------------- Tab Scroll Animation ---------------------------------------- */
-       
+
 #tabbrowser-tabs[overflow] .tabbrowser-tab:not([pinned])
 {
     box-sizing: content-box !important;
@@ -1602,42 +1602,42 @@ spacer[part="overflow-end-indicator"]
     }
 
     /* ----- Main Menu ----- */
-    
+
     #appMenu-new-tab-button2::before
     {
         mask-image: var(--tab-new-page);
     }
-    
+
     #appMenu-new-window-button2::before
     {
         mask-image: var(--window);
     }
-    
+
     #appMenu-new-private-window-button2::before
     {
         mask-image: var(--window-inprivate-account);
     }
-    
+
     #appMenu-bookmarks-button::before
     {
         mask-image: var(--star-line-horizontal);
     }
-    
+
     #appMenu-history-button::before
     {
         mask-image: var(--history);
     }
-    
+
     #appMenu-downloads-button::before
     {
         mask-image: var(--arrow-download);
     }
-    
+
     #appMenu-passwords-button::before
     {
         mask-image: var(--key);
     }
-    
+
     #appMenu-extensions-themes-button::before
     {
         mask-image: var(--puzzle-piece);

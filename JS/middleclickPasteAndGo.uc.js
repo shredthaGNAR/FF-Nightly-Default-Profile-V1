@@ -5,7 +5,9 @@
 // @include        main
 // @async          true
 // @author         Alice0775
-// @compatibility  Firefox 137
+// @compatibility  Firefox 145
+// @version        2025/11/20 10:00 Fix Bug
+// @version        2025/11/15 10:00 Bug 1986130 etc
 // @version        2025/02/04 23:00 Bug 1880913 - Move BrowserSearch out of browser.js
 // @version        2024/12/31 13:00 
 // @version        2024/01/05 00:00 
@@ -31,7 +33,7 @@ var middleclickPasteAndGo = {
     document.getElementById("paste-and-go").addEventListener("click", (event) => {middleclickPasteAndGo.pasteAndGo(event)}, false);
     document.querySelector("#searchbar .textbox-contextmenu").addEventListener("popupshown", () => {middleclickPasteAndGo.popupshown(event)}, {once: true}, );
 
-gURLBar.textbox.addEventListener("click", (event) => {middleclickPasteAndGo.pasteAndGo2(event)}, true);
+gURLBar.inputField.addEventListener("auxclick", (event) => {middleclickPasteAndGo.pasteAndGo2(event)}, true);
 document.getElementById("searchbar").addEventListener("click", (event) => {middleclickPasteAndGo.pasteAndSearch2(event)}, true);
   },
 
