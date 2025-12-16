@@ -11,7 +11,7 @@
 
 (function() {
     // Set delay in milliseconds (1000ms = 1 second)
-    const delayBeforeSwitch = 1000;
+    const delayBeforeSwitch = 2800;
     let hoverTimeout = null;
     let currentTab = null;
 

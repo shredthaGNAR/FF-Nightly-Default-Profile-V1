@@ -35,16 +35,18 @@
   background: var(--uc-tab-multi-hover) !important;
 }
 
+#tabbrowser-tabs[tablist-has-focus] .tabbrowser-tab.tablist-keyboard-focus {
+  &:not([selected])>.tab-stack>.tab-background {
 #tabbrowser-tabs:focus-within .tabbrowser-tab.tablist-keyboard-focus {
   &:not([selected]) > .tab-stack > .tab-background {
     background: var(--uc-tab-hover) !important;
   }
 
-  &[selected] > .tab-stack > .tab-background {
+  &[selected]>.tab-stack>.tab-background {
     background: var(--uc-tab-focused-hover) !important;
   }
 
-  &[multiselected]:not([selected]) > .tab-stack > .tab-background {
+  &[multiselected]:not([selected])>.tab-stack>.tab-background {
     background: var(--uc-tab-multi-hover) !important;
   }
 }
@@ -57,10 +59,11 @@
 .tab-background {
   border: none !important;
   outline: none !important;
-  opacity: 1 !important;
+  opacity: 1 !important;ß
+}
 }
 
-/* different tab shadows in various states. to produce the illusion of modulated depth */
+/* different tab shadows in various states. to produce the illusion of modulated depth *
 /* .tabbrowser-tab .tab-background {
   box-shadow: 0px 0px 15px 0px hsla(0, 0%, 0%, 0.2), 0px 0px 5px 0px hsla(0, 0%, 0%, 0.1);
 } */
@@ -76,6 +79,7 @@
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.1), 0 0 15px 0 hsla(0, 0%, 0%, 0.35) !important;
 }
 
+/*
 .tabbrowser-tab .tab-context-line {
   display: flex !important;
   order: 2 !important;
@@ -85,7 +89,7 @@
   transition: none !important;
 }
 
-/* colored lines on container tabs */
+/* colored lines on container tabs *
 .tabbrowser-tab[usercontextid] .tab-context-line {
   background-color: var(--identity-tab-color) !important;
 }
@@ -99,6 +103,7 @@
   display: none !important;
 }
 
+/*
 .tabbrowser-tab.identity-icon-on-multiselect[usercontextid][multiselected] .tab-content::after {
   content: "";
   display: flex;
@@ -148,11 +153,11 @@
 }
 
 /* pinned tabs should style just like regular tabs except without labels and buttons */
-#tabbrowser-tabs[positionpinnedtabs] > #tabbrowser-arrowscrollbox > .tabbrowser-tab[pinned] > .tab-stack {
+#tabbrowser-tabs[positionpinnedtabs]>#tabbrowser-arrowscrollbox>.tabbrowser-tab[pinned]>.tab-stack {
   border-inline: none !important;
 }
 
-#tabbrowser-tabs[positionpinnedtabs] > .tabbrowser-arrowscrollbox > .tabbrowser-tab[pinned] > .tab-stack {
+#tabbrowser-tabs[positionpinnedtabs]>.tabbrowser-arrowscrollbox>.tabbrowser-tab[pinned]>.tab-stack {
   border: none !important;
 }
 
@@ -278,6 +283,7 @@ to follow the restore tab sound button instructions on my repo's readme */
 
 .tabbrowser-tab:is(:hover, [open]) .tab-icon-sound,
 #tabbrowser-tabs:focus-within .tabbrowser-tab.tablist-keyboard-focus .tab-icon-sound {
+
   &[pictureinpicture][muted],
   &[pictureinpicture][soundplaying][muted] {
     background-image: url(chrome://userchrome/content/audioMutedButton.svg) !important;
@@ -288,7 +294,7 @@ to follow the restore tab sound button instructions on my repo's readme */
   transition: 0.12s transform ease-in-out, 0.12s opacity ease-in-out, 0.12s margin ease-in-out !important;
 }
 
-#tabbrowser-tabs .tab-content > .tab-icon-sound:not([soundplaying], [muted], [activemedia-blocked], [pictureinpicture]) {
+#tabbrowser-tabs .tab-content>.tab-icon-sound:not([soundplaying], [muted], [activemedia-blocked], [pictureinpicture]) {
   opacity: 0 !important;
   pointer-events: none !important;
   transform: translateX(16px) scale(0.5) !important;
@@ -305,7 +311,7 @@ area is hovered. so in other words it won't show if audio is playing until you
 hover the general area of the tabs, but will show if audio is muted. */
 
 /* #tabbrowser-tabs:not(:hover, :focus-within) .tabbrowser-tab[selected] .tab-content > .tab-icon-sound:not([pictureinpicture], [muted]), */
-#tabbrowser-tabs:not(:hover, :focus-within) .tabbrowser-tab:not([open]) .tab-content > .tab-icon-sound:not([soundplaying], [muted], [activemedia-blocked], [pictureinpicture]) {
+#tabbrowser-tabs:not(:hover, :focus-within) .tabbrowser-tab:not([open]) .tab-content>.tab-icon-sound:not([soundplaying], [muted], [activemedia-blocked], [pictureinpicture]) {
   opacity: 0 !important;
   pointer-events: none !important;
   transform: translateX(16px) scale(0.5) !important;
@@ -327,8 +333,8 @@ hover the general area of the tabs, but will show if audio is muted. */
 }
 
 /* attention indicator */
-.tabbrowser-tab:is([image], [pinned]) > .tab-stack > .tab-content[attention]:not([selected]),
-.tabbrowser-tab > .tab-stack > .tab-content[pinned][titlechanged]:not([selected]) {
+.tabbrowser-tab:is([image], [pinned])>.tab-stack>.tab-content[attention]:not([selected]),
+.tabbrowser-tab>.tab-stack>.tab-content[pinned][titlechanged]:not([selected]) {
   background-image: url(chrome://userchrome/content/indicator-tab-attention-purple.svg) !important;
   background-position: right 4px top 4px !important;
   background-size: 10px !important;
@@ -336,7 +342,7 @@ hover the general area of the tabs, but will show if audio is muted. */
 }
 
 /* tab crashed indicator */
-.tabbrowser-tab[crashed] > .tab-stack > .tab-content::after {
+.tabbrowser-tab[crashed]>.tab-stack>.tab-content::after {
   top: 4px;
   right: 4px;
   content: "";
@@ -436,6 +442,7 @@ hover the general area of the tabs, but will show if audio is muted. */
 }
 
 @media (prefers-reduced-motion: no-preference) {
+
   /* tabLoadingSpinner.uc.js enables a special loading throbber animation
 that spins instead of bouncing horizontally */
   @keyframes uc-tab-throbber-spinner-css {
@@ -448,6 +455,7 @@ that spins instead of bouncing horizontally */
     0% {
       transform: translateX(0);
     }
+
     100% {
       transform: translateX(-100%);
     }
@@ -457,6 +465,7 @@ that spins instead of bouncing horizontally */
     0% {
       transform: translateX(0);
     }
+
     100% {
       transform: translateX(100%);
     }
@@ -578,6 +587,6 @@ this theme in particular since we put the close button on the right, meaning it
 doesn't overlap with the right side of the label at all, which is where the
 overflowing mask is applied. so we make the mask size constant. */
 .tabbrowser-tab {
-  --tab-label-mask-size: 2em !important;
-  --tab-min-width: inherit !important;
+  --tab-label-mask-size: 1em !important;
+  --tab-min-width: 60 !important;
 }

@@ -115,8 +115,9 @@ for use with tooltipStyler.uc.js - won't do anything without that script. */
 }
 
 /* search-textbox icons (magnifying glass and clear input button) */
-@-moz-document url("chrome://browser/content/browser.xhtml"), regexp(".*Sidebar.*"), regexp(".*sidebar.*")
-{
+@-moz-document url("chrome://browser/content/browser.xhtml"),
+regexp(".*Sidebar.*"),
+regexp(".*sidebar.*") {
   .textbox-search-icons[selectedIndex="1"] {
     display: flex !important;
     flex-flow: row nowrap;
@@ -159,7 +160,7 @@ for use with tooltipStyler.uc.js - won't do anything without that script. */
     fill-opacity: 1;
   }
 
-  .textbox-search-sign[part="search-sign"] ~ input::placeholder {
+  .textbox-search-sign[part="search-sign"]~input::placeholder {
     opacity: 1;
     color: var(--panel-description-color);
   }
@@ -173,7 +174,7 @@ for use with tooltipStyler.uc.js - won't do anything without that script. */
   background: transparent !important;
 }
 
-#viewButton > .button-box > dropmarker {
+#viewButton>.button-box>dropmarker {
   margin-inline-start: 4px !important;
 }
 
@@ -190,12 +191,12 @@ for use with tooltipStyler.uc.js - won't do anything without that script. */
   margin-top: 0 !important;
 }
 
-#sidebarMenu-popup > .webextension-menuitem .menu-iconic-icon {
+#sidebarMenu-popup>.webextension-menuitem .menu-iconic-icon {
   opacity: 0.8 !important;
   fill: currentColor !important;
 }
 
-#sidebarMenu-popup > menuitem[checked="true"] .menu-iconic-icon {
+#sidebarMenu-popup>menuitem[checked="true"] .menu-iconic-icon {
   list-style-image: none !important;
   background-image: url(chrome://userchrome/content/radio.svg);
   opacity: 1 !important;
@@ -204,7 +205,7 @@ for use with tooltipStyler.uc.js - won't do anything without that script. */
   border-radius: 100%;
 }
 
-#sidebarMenu-popup > menuitem .menu-iconic-icon {
+#sidebarMenu-popup>menuitem .menu-iconic-icon {
   margin-inline: var(--context-iconic-margin) !important;
   fill-opacity: 0.8;
 }
@@ -433,7 +434,8 @@ trees so it is relatively safe to collapse them. */
   border-inline-width: 1px 0;
 }
 
-@-moz-document url("chrome://browser/content/places/bookmarksSidebar.xhtml"), url("chrome://browser/content/places/historySidebar.xhtml") {
+@-moz-document url("chrome://browser/content/places/bookmarksSidebar.xhtml"),
+url("chrome://browser/content/places/historySidebar.xhtml") {
   * {
     scrollbar-width: var(--chrome-scrollbar-width, thin) !important;
     scrollbar-color: var(--chrome-scrollbar-thumb-color, inherit) var(--chrome-scrollbar-track-color, transparent) !important;
@@ -483,16 +485,16 @@ trees so it is relatively safe to collapse them. */
     color: var(--lwt-text-color) !important;
   }
 
-  .item.selected > .item-title-container:not(:hover) {
+  .item.selected>.item-title-container:not(:hover) {
     background-color: var(--places-cell-focus-bgcolor) !important;
     color: var(--lwt-text-color) !important;
   }
 
-  .item.selected:-moz-window-inactive > .item-title-container:not(:hover) {
+  .item.selected:-moz-window-inactive>.item-title-container:not(:hover) {
     background-color: transparent !important;
   }
 
-  .item.empty:not(.client) > .item-title-container {
+  .item.empty:not(.client)>.item-title-container {
     color: var(--uc-menu-disabled-color) !important;
     background: none !important;
   }
@@ -527,7 +529,7 @@ trees so it is relatively safe to collapse them. */
   box-shadow: 0 0 8px -4px hsla(240, 4%, 0%, 0.6), 0 0 15px 0 hsla(0, 0%, 0%, 0.2) !important;
 }
 
-#vertical-tabs-pane:not([unpinned]) ~ #vertical-tabs-splitter {
+#vertical-tabs-pane:not([unpinned])~#vertical-tabs-splitter {
   position: absolute !important;
   /* draw above the app content */
   z-index: 5;

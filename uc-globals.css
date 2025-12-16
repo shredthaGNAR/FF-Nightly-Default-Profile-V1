@@ -235,12 +235,20 @@ but other than that these variables should be available everywhere. */
   --aboutPrefs-find-tags: var(--pink-action);
 
   --uc-tab-background: var(--lwt-accent-color);
-  --uc-tab-selected: var(--uc-toolbar-bgcolor);
-  --uc-tab-hover: hsl(231, 49%, 11%);
+  --uc-tab-selected: radial-gradient(circle at bottom center,
+      #b98ff3,
+      #19002f) !important;
+  --uc-tab-hover: radial-gradient(circle at bottom center,
+      #530ad0 2px,
+      #110421b8) !important;
   --uc-tab-multi: hsl(231, 50%, 11%);
-  --uc-tab-multi-hover: hsl(231, 47%, 13%);
-  --uc-tab-pinned-hover: hsl(231, 49%, 11%);
-  --uc-tab-focused-highlight: hsl(231, 36%, 22%);
+  --uc-tab-multi-hover: radial-gradient(circle at bottom center,
+      #530ad0 2px,
+      #110421b8) !important;
+  --uc-tab-pinned-hover: radial-gradient(circle at bottom center,
+      #530ad0 2px,
+      #110421b8) !important;
+  --uc-tab-focused-highlight: hsla(0, 0%, 100%, 0.301);
   --uc-tab-focused-hover: linear-gradient(color-mix(in srgb, var(--uc-tab-focused-highlight) 50%, var(--uc-toolbar-bgcolor)), var(--uc-toolbar-bgcolor));
   --multiselected-color: hsl(241, 50%, 51%);
 
@@ -453,6 +461,7 @@ toolbar panel,
 /* SF Pro is a bit heavier than Segoe UI so adjust font weights on certain elements */
 /* stylelint-disable-next-line media-query-no-invalid */
 @media -moz-pref("userChrome.css.mac-ui-fonts") {
+
   :root,
   .anonymous-content-host {
     --uc-font-weight-extrabold: 600;
@@ -464,6 +473,7 @@ toolbar panel,
 
 /* stylelint-disable-next-line media-query-no-invalid */
 @media -moz-pref("userChrome.css.menupopup-shadows") {
+
   :root,
   .anonymous-content-host {
     --menupopup-inner-box-margin: 4px !important;
@@ -475,6 +485,7 @@ toolbar panel,
 
 /* stylelint-disable-next-line media-query-no-invalid */
 @media -moz-pref("userChrome.tabs.drag-scrolling.enabled") {
+
   :root,
   .anonymous-content-host {
     --tab-scrollbuttons-display: flex;

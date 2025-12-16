@@ -1,6 +1,10 @@
 // ==UserScript==
 // @name           Context Menu Mods
+<<<<<<< Updated upstream
 // @version        1.1.1
+=======
+// @version        1.1.2
+>>>>>>> Stashed changes
 // @author         aminomancer
 // @homepageURL    https://github.com/aminomancer/uc.css.js
 // @description    Add some new items to the main content area context menu.
@@ -224,10 +228,7 @@
             item.setAttribute("engine-id", engine.id);
             item.setAttribute("label", engine.name);
             if (engine.iconURL) {
-              item.style.setProperty(
-                "--engine-icon",
-                `url('${engine.iconURL}')`
-              );
+              item.image = engine.iconURL;
             }
             fragment.appendChild(item);
           }
